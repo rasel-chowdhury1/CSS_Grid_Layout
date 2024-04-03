@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Css Grid Layout</title>
+        <link rel="stylesheet" href="base.css">
+        <style>
+            .container{
+                height: 50%;
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: 50px 1fr 50px;
+            }
+            .header{
+               /* grid-column-start: 1;
+                grid-column-end: -1; */
+                grid-column: 2 / -1; /* start / end */
+            }
+            .footer{
+                grid-column: 1 / span 12; /* span 2 -> means reach 12 column */ 
+            }
+            .content{
+                grid-column: 2 / span 11;
+            }
+            .menu{
+                grid-row: 1/-2;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">Header</div>
+            <div class="menu">Menu</div>
+            <div class="content">Content</div>
+            <div class="footer">Footer</div>
+        </div>
+    </body>
+</html>
